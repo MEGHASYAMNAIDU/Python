@@ -1,0 +1,42 @@
+import random
+from art import Hang,logo
+from word import word_list
+lives=0
+print(logo)
+choose_word=random.choice(word_list)
+
+word_len=len(choose_word)
+placeholder=""
+for position in range(word_len):
+    placeholder+="_"
+print(placeholder)  
+game_over=False
+cor_let=[]
+while not game_over:
+    print(f"you have lifes of {lives}/7")
+
+    guess=input("Guess a letter of the word:").lower()
+    print(guess)
+    if guess in cor_let:
+       print(f"You have already guessed the{guess}")
+    display=""
+    for letter in choose_word:
+        if letter==guess:
+         display+=letter
+         cor_let.append(guess)
+        elif letter in cor_let:
+            display+=letter 
+        else:
+         display+="_"   
+    print(display) 
+    if guess not in choose_word:
+        lives+=1
+        print(f"If you guessed{guess}, that's nor the word you lose a life")
+        if lives==7:
+            game_over=True
+            print(f"The word is {choose_word} You Lose")    
+    if "_" not in display:
+        game_over=True
+        print("You Win") 
+    print(Hang[lives])    
+
