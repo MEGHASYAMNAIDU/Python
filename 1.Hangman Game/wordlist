@@ -1,0 +1,6 @@
+word_list = [
+    "apple", "banana", "cherry", "date", "elephant",
+    "forest", "guitar", "horizon", "island", "jungle",
+    "kitten", "lantern", "mountain", "notebook", "ocean",
+    "penguin", "quasar", "rainbow", "sunshine", "tiger"
+]
